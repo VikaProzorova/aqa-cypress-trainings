@@ -1,5 +1,24 @@
 {
+  "name": "aqa-cypress-trainings",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "devDependencies": {
-    "cypress": "^14.5.0"
+    "@4tw/cypress-drag-drop": "^2.3.0",
+    "@eslint/js": "^9.30.0",
+    "@stylistic/eslint-plugin-js": "^4.4.1",
+    "cypress": "^14.5.3",
+    "cypress-xpath": "^2.0.1",
+    "eslint": "^9.30.0",
+    "eslint-plugin-cypress": "^5.1.0",
+    "globals": "^16.3.0"
   }
 }
