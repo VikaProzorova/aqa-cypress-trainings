@@ -23,3 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.overwrite('visit', (originalFn, url, ...args) => {
+  originalFn(url, {
+    auth: {
+      username: 'guest',
+      password: 'welcome2qauto'
+    },
+    ...args
+  })
+})
