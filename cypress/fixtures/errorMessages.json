@@ -1,0 +1,26 @@
+{
+    "registrationForm": {
+        "name": {
+            "empty": "Name required",
+            "invalidData": "Name is invalid",
+            "invalidLength": "Name has to be from 2 to 20 characters long"
+        },
+        "lastName": {
+            "empty": "Last name required",
+            "invalidData": "Last name is invalid",
+            "invalidLength": "Last name has to be from 2 to 20 characters long"
+        },
+        "email": {
+            "empty": "Email required",
+            "invalidData": "Email is incorrect"
+        },
+        "password": {
+            "empty": "Password required",
+            "invalidData": "Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter"
+        },
+        "repeatPassword": {
+            "empty": "Re-enter password required",
+            "invalidMatch": "Passwords do not match"
+        }
+    }
+}
