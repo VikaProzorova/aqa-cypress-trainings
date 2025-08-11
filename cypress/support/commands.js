@@ -57,8 +57,8 @@ Cypress.Commands.add('login', {prevSubject: false} ,(email = Cypress.env('DEFAUL
   cy.contains(selLogin.submitButton, 'Login').click();
 });
 
-Cypress.Commands.add('checkValidationErrorEmptyField', (fieldId, errorText) => {
-  cy.get(fieldId)
+Cypress.Commands.add('checkValidationErrorEmptyField', (selector, errorText) => {
+  cy.get(selector)
     .clear()
     .blur()
     .should('have.css', 'border-color', 'rgb(220, 53, 69)')
@@ -68,8 +68,8 @@ Cypress.Commands.add('checkValidationErrorEmptyField', (fieldId, errorText) => {
     .and('have.text', errorText);
 });
 
-Cypress.Commands.add('checkValidationErrorInvalidContent', (fieldId, invalidContent, errorText, { isSensitive = false } = {}) => {
-  cy.get(fieldId)
+Cypress.Commands.add('checkValidationErrorInvalidContent', (selector, invalidContent, errorText, { isSensitive = false } = {}) => {
+  cy.get(selector)
     .clear()
     .type(invalidContent, { isSensitive })
     .blur()
@@ -80,9 +80,9 @@ Cypress.Commands.add('checkValidationErrorInvalidContent', (fieldId, invalidCont
     .and('have.text', errorText);
 });
 
-Cypress.Commands.add('checkValidationErrorValidContent', (fieldId, content, { addSpaces = false, isSensitive = false } = {}) => {
+Cypress.Commands.add('checkValidationErrorValidContent', (selector, content, { addSpaces = false, isSensitive = false } = {}) => {
   const contentToType = addSpaces ? `  ${content}  ` : content;
-  cy.get(fieldId)
+  cy.get(selector)
     .clear()
     .type(contentToType, { isSensitive })
     .blur()
