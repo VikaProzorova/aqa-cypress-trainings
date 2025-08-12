@@ -1,3 +1,3 @@
 export const headersSelectors = {
-  myProfileButton: '[id="userNavDropdown"]'
+  myProfileButton: '[id="userNavDropdown"]',
 };
