@@ -5,5 +5,8 @@ export const registrationFormSelectors = {
   passwordInput: "#signupPassword",
   repeatPasswordInput: "#signupRepeatPassword",
   submitButton: ".modal-footer .btn.btn-primary",
-  errorMessage: ".invalid-feedback",
+  title: {
+    selector: ".modal-header .modal-title",
+    text: "Registration",
+  },
 };
