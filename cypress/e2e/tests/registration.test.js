@@ -212,7 +212,7 @@ describe("Registration form Happy path", () => {
   const fakerUser = {
     nameData: faker.person.firstName(),
     lastNameData: faker.person.lastName(),
-    emailData: faker.internet.email({ provider: "qaauto.faker" }),
+    emailData: faker.internet.email({ provider: "qauto.faker" }),
     passwordData: "123Qwerty",
     repeatPasswordData: "123Qwerty",
   };

@@ -1,26 +1,64 @@
 {
-    "registrationForm": {
-        "name": {
-            "empty": "Name required",
-            "invalidData": "Name is invalid",
-            "invalidLength": "Name has to be from 2 to 20 characters long"
-        },
-        "lastName": {
-            "empty": "Last name required",
-            "invalidData": "Last name is invalid",
-            "invalidLength": "Last name has to be from 2 to 20 characters long"
-        },
-        "email": {
-            "empty": "Email required",
-            "invalidData": "Email is incorrect"
-        },
-        "password": {
-            "empty": "Password required",
-            "invalidData": "Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter"
-        },
-        "repeatPassword": {
-            "empty": "Re-enter password required",
-            "invalidMatch": "Passwords do not match"
-        }
+  "registrationForm": {
+    "name": {
+      "empty": "Name required",
+      "invalidData": "Name is invalid",
+      "invalidLength": "Name has to be from 2 to 20 characters long"
+    },
+    "lastName": {
+      "empty": "Last name required",
+      "invalidData": "Last name is invalid",
+      "invalidLength": "Last name has to be from 2 to 20 characters long"
+    },
+    "email": {
+      "empty": "Email required",
+      "invalidData": "Email is incorrect"
+    },
+    "password": {
+      "empty": "Password required",
+      "invalidData": "Password has to be from 8 to 15 characters long and contain at least one integer, one capital, and one small letter"
+    },
+    "repeatPassword": {
+      "empty": "Re-enter password required",
+      "invalidMatch": "Passwords do not match"
     }
+  },
+  "loginForm": {
+    "email": {
+      "empty": "Email required",
+      "invalidData": "Email is incorrect"
+    },
+    "password": {
+      "empty": "Password required"
+    },
+    "invalidData": "Wrong email or password"
+  },
+  "restoreAccessForm": {
+    "email": {
+      "empty": "Email required"
+    }
+  },
+  "addCarToGarageForm": {
+    "mileage": {
+      "empty": "Mileage cost required",
+      "invalidData": "Mileage has to be from 0 to 999999"
+    }
+  },
+  "addExpenseToCarForm": {
+    "reportDate": {
+      "invalidData": "Report date has to be less than tomorrow"
+    },
+    "mileage": {
+      "empty": "Mileage required",
+      "invalidData": "Mileage has to be from 0 to 999999"
+    },
+    "liters": {
+      "empty": "Liters required",
+      "invalidData": "Liters has to be from 0.01 to 9999"
+    },
+    "totalCost": {
+      "empty": "Total cost required",
+      "invalidData": "Total cost has to be from 0.01 to 1000000"
+    }
+  }
 }
