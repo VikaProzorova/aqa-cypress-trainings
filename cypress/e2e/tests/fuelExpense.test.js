@@ -3,6 +3,7 @@ import errors from "../../fixtures/errorMessages.json";
 
 import { fuelExpensePageSelectors as selExpensePage } from "../../selectors/fuelExpensePage";
 import { addFuelExpenseSelectors as selAddExpense } from "../../selectors/addFuelExpenseForm";
+import { headersSelectors as selHeader } from "../../selectors/header";
 
 import { GaragePage } from "../../support/poms/GaragePage";
 import { AddCarForm } from "../../support/poms/AddCarForm";
@@ -42,7 +43,10 @@ describe("Add fuel expense form tests", () => {
   });
 
   afterEach(() => {
-    garagePage.visit();
+    cy.contains(
+      selHeader.garageButton.selector,
+      selHeader.garageButton.text
+    ).click();
     garagePage.removeCar(addCarData.brand, addCarData.model);
   });
 

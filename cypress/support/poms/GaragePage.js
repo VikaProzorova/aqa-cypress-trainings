@@ -1,10 +1,6 @@
 import { garagePageSelectors as sel } from "../../selectors/garagePage";
 
 export class GaragePage {
-  visit() {
-    cy.visit("/panel/garage");
-  }
-
   openAddCarForm() {
     cy.contains(sel.addCarButton.selector, sel.addCarButton.text).click();
   }

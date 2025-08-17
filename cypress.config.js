@@ -2,7 +2,7 @@ const { defineConfig } = require("cypress");
 const path = require("path");
 const fs = require("fs");
 
-const getConfigFileObject = (env = "qaauto") => {
+const getConfigFileObject = (env = "qauto") => {
   const configFilePath = path.join(
     "cypress",
     "fixtures",
@@ -17,7 +17,7 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       const configOverrides = getConfigFileObject(
-        process.env.TEST_ENVIRONMENT || "qaauto"
+        process.env.TEST_ENVIRONMENT || "qauto"
       );
       const envDefaultVars = { ...config.env };
       config = { ...config, ...configOverrides };
@@ -38,6 +38,12 @@ module.exports = defineConfig({
         youtubeHref: "https://www.youtube.com/user/HillelITSchool",
         linkedinHref: "https://www.linkedin.com/school/ithillel/",
       },
+    },
+    reporter: "mochawesome",
+    reporterOptions: {
+      overwrite: false,
+      html: false,
+      json: true,
     },
   },
 });
