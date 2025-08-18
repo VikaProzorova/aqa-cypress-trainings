@@ -16,12 +16,7 @@ describe("Add car form tests", () => {
   };
 
   beforeEach(() => {
-    cy.visit("");
-    cy.contains("button", "Sign In").click();
-    cy.login(
-      Cypress.env("DEFAULT_USER_EMAIL"),
-      Cypress.env("DEFAULT_USER_PASSWORD")
-    );
+    cy.login();
   });
   after(() => {
     garagePage.removeCar(carTestData.brand, carTestData.model);

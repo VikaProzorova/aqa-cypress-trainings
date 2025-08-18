@@ -239,9 +239,6 @@ describe("Registration form Happy path", () => {
   });
 
   it("Login a new user", () => {
-    cy.visit("");
-    cy.contains("button", "Sign In").click();
-
     cy.login(fakerUser.emailData, fakerUser.passwordData);
     cy.contains(selHeader.myProfileButton, "My profile").should("be.visible");
   });

@@ -1,0 +1,12 @@
+{
+  "id": 393774,
+  "carBrandId": 4,
+  "carModelId": 17,
+  "initialMileage": 50,
+  "updatedMileageAt": "2025-08-18T08:51:49.389Z",
+  "carCreatedAt": "2025-08-18T08:51:49.389Z",
+  "mileage": 50,
+  "brand": "Porsche",
+  "model": "Cayenne",
+  "logo": "porsche.png"
+}

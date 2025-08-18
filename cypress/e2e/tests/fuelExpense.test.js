@@ -32,12 +32,7 @@ describe("Add fuel expense form tests", () => {
   };
 
   beforeEach(() => {
-    cy.visit("");
-    cy.contains("button", "Sign In").click();
-    cy.login(
-      Cypress.env("DEFAULT_USER_EMAIL"),
-      Cypress.env("DEFAULT_USER_PASSWORD")
-    );
+    cy.login();
     garagePage.openAddCarForm();
     addCarForm.addCar(addCarData.brand, addCarData.model, addCarData.mileage);
   });
@@ -124,29 +119,6 @@ describe("Add fuel expense form tests", () => {
     fuelExpensePage.visit();
     fuelExpensePage.openAddExpenseForm();
     fuelExpenseForm.addExpense(addFuelExpenceData);
-    cy.contains(
-      selExpensePage.carsSelect,
-      `${addFuelExpenceData.brand} ${addFuelExpenceData.model}`
-    ).should("be.visible");
-    cy.get(selExpensePage.expensesTable)
-      .should("be.visible")
-      .within(() => {
-        cy.get("tbody > tr > :nth-child(1)").should(
-          "have.text",
-          addFuelExpenceData.reportDate
-        );
-        cy.get("tbody > tr > :nth-child(2)").should(
-          "have.text",
-          addFuelExpenceData.mileage
-        );
-        cy.get("tbody > tr > :nth-child(3)").should(
-          "have.text",
-          `${addFuelExpenceData.liters}L`
-        );
-        cy.get("tbody > tr > :nth-child(4)").should(
-          "have.text",
-          `${addFuelExpenceData.totalCost}.00 USD`
-        );
-      });
+    fuelExpensePage.checkExpenseVisible(addFuelExpenceData);
   });
 });

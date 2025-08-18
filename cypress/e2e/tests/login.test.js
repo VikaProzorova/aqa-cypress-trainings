@@ -115,13 +115,7 @@ describe("Login form validation tests", () => {
 
 describe("Login form Happy path", () => {
   it("Login default env user", () => {
-    cy.visit("");
-    cy.contains("button", "Sign In").click();
-
-    cy.login(
-      Cypress.env("DEFAULT_USER_EMAIL"),
-      Cypress.env("DEFAULT_USER_PASSWORD")
-    );
+    cy.login();
     cy.contains(selHeader.myProfileButton, "My profile").should("be.visible");
   });
 });

@@ -31,4 +31,16 @@ export class AddCarForm {
     this.fillMileage(mileage);
     this.saveAddedCar();
   }
+
+  addCarAndCaptureResponse(brand, model, mileage) {
+    cy.intercept("POST", "/api/cars").as("addCar");
+    this.addCar(brand, model, mileage);
+    cy.wait("@addCar").then((interception) => {
+      expect(interception.response.statusCode).to.equal(201);
+      cy.task("writeFile", {
+        filename: "cypress/temp/addedCar.json",
+        content: interception.response.body?.data,
+      });
+    });
+  }
 }

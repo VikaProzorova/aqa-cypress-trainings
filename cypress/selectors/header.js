@@ -4,4 +4,8 @@ export const headersSelectors = {
     selector: ".header .btn.header-link",
     text: "Garage",
   },
+  fuelExpensesButton: {
+    selector: ".header .btn.header-link",
+    text: "Fuel expenses",
+  },
 };
