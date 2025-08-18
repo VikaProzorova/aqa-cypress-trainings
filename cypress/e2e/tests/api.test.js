@@ -58,6 +58,7 @@ describe("Testing Add fuel expense logic with API", () => {
   });
 
   it("Check API call Add fuel expence", () => {
+    cy.loginViaApi();
     cy.addFuelExpenseViaApi(fuelExpenseTestData);
   });
 

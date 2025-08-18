@@ -113,19 +113,27 @@ Cypress.Commands.add(
   }
 );
 
-Cypress.Commands.add("addFuelExpenseViaApi", (reqBody = {}) => {
-  cy.request({
-    method: "POST",
-    url: "api/auth/signin",
-    body: {
-      email: Cypress.env("DEFAULT_USER_EMAIL"),
-      password: Cypress.env("DEFAULT_USER_PASSWORD"),
-      remember: false,
-    },
-  }).then((response) => {
-    expect(response.status).to.equal(200);
-  });
+Cypress.Commands.add(
+  "loginViaApi",
+  (
+    email = Cypress.env("DEFAULT_USER_EMAIL"),
+    password = Cypress.env("DEFAULT_USER_PASSWORD")
+  ) => {
+    cy.request({
+      method: "POST",
+      url: "api/auth/signin",
+      body: {
+        email,
+        password,
+        remember: false,
+      },
+    }).then((response) => {
+      expect(response.status).to.equal(200);
+    });
+  }
+);
 
+Cypress.Commands.add("addFuelExpenseViaApi", (reqBody = {}) => {
   cy.request({
     method: "POST",
     url: "/api/expenses",
