@@ -16,6 +16,15 @@ const getConfigFileObject = (env = "qauto") => {
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
+      on("task", {
+        writeFile({ filename, content }) {
+          fs.writeFileSync(filename, JSON.stringify(content, null, 2));
+          return null;
+        },
+        readFile(filename) {
+          return fs.readFileSync(filename, "utf8");
+        },
+      });
       const configOverrides = getConfigFileObject(
         process.env.TEST_ENVIRONMENT || "qauto"
       );
