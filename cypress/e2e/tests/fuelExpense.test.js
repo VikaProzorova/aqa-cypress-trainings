@@ -119,6 +119,6 @@ describe("Add fuel expense form tests", () => {
     fuelExpensePage.visit();
     fuelExpensePage.openAddExpenseForm();
     fuelExpenseForm.addExpense(addFuelExpenceData);
-    fuelExpenseForm.checkExpenseVisible(addFuelExpenceData);
+    fuelExpensePage.checkExpenseVisible(addFuelExpenceData);
   });
 });
